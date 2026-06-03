@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cartita de Amor ❤️</title>
+
+<style>
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Segoe UI',sans-serif;
+}
+
+body{
+  background:linear-gradient(135deg,#ffb6d9,#ffd6ec,#ffe6f5);
+  min-height:100vh;
+  overflow-x:hidden;
+  padding:20px;
+  position:relative;
+}
+
+/* BRILLOS DEL FONDO */
+
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  background:
+  radial-gradient(circle at 20% 20%, rgba(255,255,255,.4), transparent 25%),
+  radial-gradient(circle at 80% 30%, rgba(255,255,255,.3), transparent 20%),
+  radial-gradient(circle at 50% 80%, rgba(255,255,255,.3), transparent 25%);
+  pointer-events:none;
+  z-index:0;
+}
+
+/* SOBRE */
+
+#sobre{
+  position:fixed;
+  inset:0;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  background:linear-gradient(135deg,#ffb6d9,#ffd6ec,#ffe6f5);
+  z-index:9999;
+  cursor:pointer;
+  animation:latido 1.5s infinite;
+}
+
+#sobre span{
+  font-size:120px;
+  filter:drop-shadow(0 0 15px rgba(255,255,255,.8));
+}
+
+#sobre p{
+  margin-top:20px;
+  font-size:22px;
+  color:#c2185b;
+  font-weight:bold;
+}
+
+@keyframes latido{
+  50%{
+    transform:scale(1.08);
+  }
+}
+
+/* CONTENIDO */
+
+#contenido{
+  display:none;
+  justify-content:center;
+  align-items:center;
+  width:100%;
+  min-height:100vh;
+  position:relative;
+  z-index:5;
+}
+
+/* CORAZONES */
+
+.heart{
+  position:fixed;
+  color:#ff4f8b;
+  opacity:.7;
+  pointer-events:none;
+  animation:flotar linear infinite;
+  z-index:1;
+}
+
+@keyframes flotar{
+  0%{
+    transform:translateY(100vh) scale(.5);
+    opacity:0;
+  }
+
+  20%{
+    opacity:1;
+  }
+
+  100%{
+    transform:translateY(-120px) scale(1.5);
+    opacity:0;
+  }
+}
+
+/* TARJETA */
+
+.card{
+  position:relative;
+  z-index:10;
+  width:100%;
+  max-width:900px;
+  margin:auto;
+  background:rgba(255,255,255,.25);
+  backdrop-filter:blur(12px);
+  border-radius:30px;
+  padding:clamp(20px,5vw,40px);
+  text-align:center;
+  box-shadow:0 10px 30px rgba(0,0,0,.15);
+  border:2px solid rgba(255,255,255,.4);
+  animation:entrada 1.2s ease;
+}
+
+@keyframes entrada{
+  from{
+    opacity:0;
+    transform:translateY(40px);
+  }
+
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+/* TITULOS */
+
+h1{
+  font-size:clamp(32px,7vw,55px);
+  color:#ff2f75;
+  margin-bottom:20px;
+  animation:brillo 2s infinite alternate;
+}
+
+@keyframes brillo{
+  from{
+    text-shadow:0 0 10px white;
+  }
+
+  to{
+    text-shadow:0 0 25px #ff4f8b;
+  }
+}
+
+h2{
+  color:#ff4f8b;
+  margin-bottom:25px;
+  font-size:clamp(22px,4vw,32px);
+}
+
+/* TEXTO */
+
+p{
+  font-size:clamp(16px,2.5vw,22px);
+  color:#7a1f4d;
+  line-height:1.8;
+  margin-bottom:25px;
+}
+
+.card p{
+  max-width:750px;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+.love{
+  font-size:clamp(24px,5vw,30px);
+  color:#ff2f75;
+  animation:pulse 1.5s infinite;
+  margin-bottom:25px;
+}
+
+@keyframes pulse{
+  50%{
+    transform:scale(1.15);
+  }
+}
+
+/* FOTOS */
+
+.imagenes{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:20px;
+  margin-top:25px;
+}
+
+.imagenes img{
+  width:100%;
+  max-width:320px;
+  aspect-ratio:1/1;
+  object-fit:cover;
+  border-radius:25px;
+  border:5px solid white;
+  box-shadow:0 5px 15px rgba(0,0,0,.2);
+  transition:.4s;
+  margin:auto;
+}
+
+.imagenes img:hover{
+  transform:scale(1.05) translateY(-5px);
+  box-shadow:0 15px 25px rgba(0,0,0,.25);
+}
+
+.footer{
+  margin-top:30px;
+  color:#c2185b;
+  font-size:clamp(16px,3vw,20px);
+  font-weight:bold;
+}
+
+</style>
+</head>
+
+<body>
+
+<div id="sobre" onclick="abrirCarta()">
+  <span>💌</span>
+  <p>Haz clic para abrir la carta</p>
+</div>
+
+<div id="contenido">
+
+  <div class="card">
+
+    <h1>❤️ Te Amo Mucho ❤️</h1>
+
+    <h2>Para la mejor niña del mundo: Maylin 💖</h2>
+
+    <p>
+      Maylin, quiero que sepas que eres una persona demasiado especial para mí.
+      Cada momento contigo se vuelve un recuerdo hermoso y siempre logras hacerme feliz.
+      Tu sonrisa ilumina todo y jamás quiero dejar de verte sonreír. 💕
+    </p>
+
+    <p>
+      Gracias por existir, por acompañarme y por ser alguien tan increíble.
+      Nunca olvides lo importante y maravillosa que eres para mí. 💗
+    </p>
+
+    <div class="love">
+      💞 FOREVER 💞
+    </div>
+
+    <div class="imagenes">
+
+      <img src="may.png.jpg" alt="Maylin">
+
+      <img src="IMG_20260507_182507_307.webp" alt="Foto especial">
+
+      <img src="Roblox 24_05_2026 03_08_35 p. m..png" alt="Recuerdo especial">
+
+    </div>
+
+    <div class="footer">
+      💖 Hecho con mucho amor para Maylin 💖
+    </div>
+
+  </div>
+
+</div>
+
+<script>
+
+function abrirCarta(){
+  document.getElementById("sobre").style.display="none";
+  document.getElementById("contenido").style.display="flex";
+}
+
+function crearCorazon(){
+
+  const heart=document.createElement("div");
+
+  heart.classList.add("heart");
+
+  const corazones=["💖","💕","💗","💘","❤️"];
+
+  heart.innerHTML=corazones[Math.floor(Math.random()*corazones.length)];
+
+  heart.style.left=Math.random()*100+"vw";
+
+  heart.style.fontSize=(Math.random()*20+15)+"px";
+
+  heart.style.animationDuration=(Math.random()*5+5)+"s";
+
+  document.body.appendChild(heart);
+
+  setTimeout(()=>{
+    heart.remove();
+  },10000);
+}
+
+setInterval(crearCorazon,250);
+
+</script>
+
+</body>
+</html>
+
+
